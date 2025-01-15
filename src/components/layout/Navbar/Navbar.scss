@@ -1,0 +1,23 @@
+@use '../../../styles/main.scss' as *;
+
+.navbar-menu {
+  display: flex;
+  gap: $spacing-large;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li a {
+    text-decoration: none;
+    color: $color-dark;
+    padding: $spacing-small $spacing-medium;
+    border-radius: $border-radius;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: $color-primary;
+      color: $color-white;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+  }
+}

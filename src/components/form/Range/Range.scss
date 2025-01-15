@@ -1,0 +1,41 @@
+@use "../../../styles/main.scss" as *;
+
+.range {
+  display: flex;
+  align-items: center;
+  gap: $spacing-small;
+
+  &__input {
+    width: 100%;
+    appearance: none;
+    height: 6px;
+    background-color: $color-light;
+    border-radius: $border-radius;
+    outline: none;
+    @include transition(background-color 0.3s ease);
+
+    &::-webkit-slider-thumb {
+      appearance: none;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background-color: $color-primary;
+      cursor: pointer;
+      @include transition(transform 0.2s ease);
+    }
+
+    &:hover::-webkit-slider-thumb {
+      transform: scale(1.2);
+    }
+
+    &:disabled {
+      background-color: $color-disabled;
+      cursor: not-allowed;
+    }
+  }
+
+  &__value {
+    font-weight: $font-weight-bold;
+    color: $color-dark;
+  }
+}

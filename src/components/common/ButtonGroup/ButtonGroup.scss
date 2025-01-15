@@ -1,0 +1,63 @@
+@use '../../../styles/main.scss' as *;
+
+.button-group {
+  display: flex;
+
+  &-horizontal {
+    flex-direction: row;
+
+    .btn + .btn {
+      margin-left: $spacing-small;
+    }
+  }
+
+  &-vertical {
+    flex-direction: column;
+
+    .btn + .btn {
+      margin-top: $spacing-small;
+    }
+  }
+
+  .btn {
+    padding: $spacing-small $spacing-medium;
+    font-size: $font-size-medium;
+    border-radius: $border-radius;
+    border: none;
+    cursor: pointer;
+    @include transition(background-color, 0.3s);
+
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 0.6;
+    }
+
+    &-primary {
+      background-color: $color-primary;
+      color: $color-white;
+
+      &:hover {
+        background-color: $color-primary-hover;
+      }
+    }
+
+    &-secondary {
+      background-color: $color-secondary;
+      color: $color-white;
+
+      &:hover {
+        background-color: $color-secondary-hover;
+      }
+    }
+
+    &-success {
+      background-color: $color-success;
+      color: $color-white;
+    }
+
+    &-danger {
+      background-color: $color-danger;
+      color: $color-white;
+    }
+  }
+}

@@ -1,0 +1,55 @@
+@use '../../../styles/main.scss' as *;
+
+
+.accordion {
+  width: 100%;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow-default;
+
+  .accordion-item {
+    border-bottom: 1px solid $color-secondary;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &.active {
+      background-color: $color-tertiary;
+    }
+  }
+
+  .accordion-title {
+    width: 100%;
+    padding: $spacing-medium;
+    background-color: $color-light;
+    border: none;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: $font-size-medium;
+    font-family: $font-family;
+    cursor: pointer;
+    @include transition(all, 0.3s);
+
+    &:hover {
+      background-color: $color-secondary;
+      color: $color-white;
+    }
+
+    .accordion-icon {
+      font-size: 1.2rem;
+      @include transition(transform, 0.3s);
+    }
+
+    .rotated {
+      transform: rotate(180deg);  // 🔄 Gira o ícone quando o item está aberto
+    }
+  }
+
+  .accordion-content {
+    padding: $spacing-medium;
+    background-color: $color-white;
+    color: $color-dark;
+  }
+}

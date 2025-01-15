@@ -1,0 +1,50 @@
+@use "../../../styles/main.scss" as *;
+@use "sass:color";
+
+.floating-label {
+  position: relative;
+  width: 100%;
+  margin-bottom: $spacing-medium;
+
+  &__input {
+    width: 100%;
+    padding: $spacing-small $spacing-medium;
+    border: 1px solid $color-border;
+    border-radius: $border-radius;
+    font-size: $font-size-medium;
+    background-color: $color-light;
+    transition: all 0.3s ease;
+
+    &:focus {
+      border-color: $color-primary;
+      box-shadow: 0 0 5px rgba($color-primary, 0.5);
+    }
+
+    &--filled + .floating-label__label,
+    &:focus + .floating-label__label {
+      top: -10px;
+      left: $spacing-small;
+      font-size: $font-size-small;
+      color: $color-primary;
+      background-color: $color-light;
+      padding: 0 $spacing-small;
+      border-radius: $border-radius;
+    }
+  }
+
+  &__label {
+    position: absolute;
+    top: 50%;
+    left: $spacing-medium;
+    transform: translateY(-50%);
+    font-size: $font-size-medium;
+    color: $color-muted;
+    transition: all 0.3s ease;
+    pointer-events: none;
+  }
+
+  &--disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}

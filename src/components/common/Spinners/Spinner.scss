@@ -1,0 +1,36 @@
+@use "../../../styles/main.scss" as *;
+
+.spinner {
+  border-radius: 50%;
+  border-style: solid;
+  border-width: 4px;
+  border-top-color: transparent;
+  animation: spin 1s linear infinite;
+
+  &--small { width: 24px; height: 24px; border-width: 2px; }
+  &--medium { width: 48px; height: 48px; }
+  &--large { width: 72px; height: 72px; border-width: 6px; }
+
+  &--primary { border-color: $color-primary transparent $color-primary transparent; }
+  &--secondary { border-color: $color-secondary transparent $color-secondary transparent; }
+  &--success { border-color: $color-success transparent $color-success transparent; }
+  &--danger { border-color: $color-danger transparent $color-danger transparent; }
+  &--warning { border-color: $color-warning transparent $color-warning transparent; }
+  &--info { border-color: $color-info transparent $color-info transparent; }
+  &--light { border-color: $color-light transparent $color-light transparent; }
+  &--dark { border-color: $color-dark transparent $color-dark transparent; }
+
+  &--gradient {
+    background: linear-gradient(45deg, $color-primary, $color-secondary);
+    animation: spin 1.5s linear infinite;
+  }
+  
+  &--neon {
+    box-shadow: 0 0 10px $color-primary, 0 0 20px $color-secondary;
+  }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

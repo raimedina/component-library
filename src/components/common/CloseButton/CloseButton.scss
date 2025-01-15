@@ -1,0 +1,37 @@
+@use '../../../styles/main.scss' as *;
+
+.close-button {
+  border: none;
+  background-color: transparent;
+  color: $color-dark;
+  cursor: pointer;
+  padding: $spacing-small;
+  font-weight: bold;
+  border-radius: 50%;
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    background-color: $color-light;
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  &:active {
+    transform: scale(0.9);
+  }
+
+  &--small {
+    font-size: 0.75rem;
+    padding: $spacing-small;
+  }
+
+  &--medium {
+    font-size: 1rem;
+    padding: $spacing-small;
+  }
+
+  &--large {
+    font-size: 1.5rem;
+    padding: $spacing-medium;
+  }
+}

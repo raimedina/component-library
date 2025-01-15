@@ -1,0 +1,48 @@
+@use "../../../styles/main.scss" as *;
+@use "sass:color";
+
+.theme-toggle {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 32px;
+
+  input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: color.adjust($color-light, $lightness: 15%);
+    border-radius: 32px;
+    border: 2px solid color.adjust($color-light, $lightness: -10%);
+    transition: background-color 0.3s, transform 0.3s;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 4px;
+
+    .icon {
+      width: 22px;
+      height: 22px;
+      transition: transform 0.3s ease-in-out;
+    }
+  }
+
+  input:checked + .slider {
+    background-color: $color-dark;
+    justify-content: flex-end;
+
+    .icon {
+      transform: rotate(360deg);
+    }
+  }
+}

@@ -1,0 +1,38 @@
+@use "../../../styles/main.scss" as *;
+
+.pagination {
+  display: flex;
+  gap: $spacing-small;
+
+  &__button {
+    padding: $spacing-small $spacing-medium;
+    border: 1px solid $color-border;
+    background-color: $color-light;
+    color: $color-dark;
+    border-radius: $border-radius-small;
+    cursor: pointer;
+    @include transition(background-color 0.3s ease);
+
+    &:hover:not(:disabled) {
+      background-color: $color-primary;
+      color: $color-light;
+    }
+
+    &:disabled {
+      background-color: $color-disabled;
+      cursor: not-allowed;
+    }
+
+    &--active {
+      background-color: $color-secondary;
+      color: $color-light;
+      font-weight: $font-weight-bold;
+    }
+  }
+  .pagination__button--active {
+    background-color: $color-secondary;
+    color: $color-light;
+    font-weight: $font-weight-bold;
+    border-color: $color-secondary;
+  }
+}

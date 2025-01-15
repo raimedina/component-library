@@ -1,0 +1,72 @@
+@use "../../../styles/main.scss" as *;
+@use "sass:color";
+
+.tooltip-wrapper {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.tooltip {
+  position: absolute;
+  background: linear-gradient(135deg, $color-primary, $color-secondary);
+  color: $color-light;
+  padding: $spacing-small $spacing-medium;
+  border-radius: $border-radius-large;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+  font-size: $font-size-small;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  pointer-events: none;
+
+  &::before {
+    content: "💡";
+    margin-right: 8px;
+  }
+
+  &--top {
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-10px);
+  }
+
+  &--right {
+    top: 50%;
+    left: 120%;
+    transform: translateY(-50%) translateX(10px);
+  }
+
+  &--bottom {
+    top: 120%;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+  }
+
+  &--left {
+    top: 50%;
+    right: 120%;
+    transform: translateY(-50%) translateX(-10px);
+  }
+
+  &.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  &--small {
+    padding: $spacing-small $spacing-small;
+    font-size: $font-size-small;
+  }
+
+  &--large {
+    padding: $spacing-medium $spacing-large;
+    font-size: $font-size-large;
+  }
+}

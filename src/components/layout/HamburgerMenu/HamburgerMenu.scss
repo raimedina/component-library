@@ -1,0 +1,63 @@
+@use '../../../styles/main.scss' as *;
+@use "sass:color";
+
+.menuContainer {
+  position: relative;
+  z-index: 1000;
+}
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  width: 30px;
+  height: 24px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+
+  span {
+    height: 3px;
+    width: 100%;
+    background-color: $color-dark;
+    border-radius: $border-radius;
+    transition: all 0.3s ease;
+  }
+
+  &.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  &.open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  &.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+}
+
+.navMenu {
+  display: none;
+  position: absolute;
+  top: 40px;
+  left: 0;
+  background-color: $color-white;
+  box-shadow: $box-shadow-default;
+  border-radius: $border-radius;
+  padding: $spacing-small;
+
+  &.showMenu {
+    display: block;
+  }
+
+  ul li a {
+    padding: $spacing-small;
+    color: $color-dark;
+    text-decoration: none;
+
+    &:hover {
+      background-color: color.adjust($color-primary, $lightness: 20%);
+      color: $color-white;
+    }
+  }
+}

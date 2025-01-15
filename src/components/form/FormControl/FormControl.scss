@@ -1,0 +1,41 @@
+
+@use "../../../styles/main.scss" as *;
+
+
+.form-control {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-small;
+
+  &__label {
+    font-weight: $font-weight-regular;
+    color: $color-dark;
+  }
+
+  &__input {
+    padding: $spacing-small;
+    border: 1px solid $color-border;
+    border-radius: $border-radius-small;
+    @include transition(border-color, 0.3s ease);
+
+    &:focus {
+      outline: none;
+      border-color: $color-primary;
+      @include box-shadow(0 0 0 2px rgba($color-primary, 0.2));
+    }
+
+    &:disabled {
+      background-color: $color-disabled;
+      cursor: not-allowed;
+    }
+  }
+
+  &--error &__input {
+    border-color: $color-danger;
+  }
+
+  &__error {
+    font-size: $font-size-small;
+    color: $color-danger;
+  }
+}

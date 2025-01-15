@@ -1,0 +1,46 @@
+@use "../../../styles/main.scss" as *;
+
+.input-group {
+  display: flex;
+  align-items: center;
+  border: 1px solid $color-border;
+  border-radius: $border-radius;
+  overflow: hidden;
+  background-color: $color-light;
+  transition: box-shadow 0.3s ease;
+
+  &:focus-within {
+    box-shadow: 0 0 0 2px rgba($color-primary, 0.3);
+    border-color: $color-primary;
+  }
+
+  &--disabled {
+    background-color: $color-disabled;
+    cursor: not-allowed;
+  }
+
+  &__prepend,
+  &__append {
+    padding: $spacing-small $spacing-medium;
+    background-color: $color-light;
+    border-right: 1px solid $color-border;
+  }
+
+  &__append {
+    border-left: 1px solid $color-border;
+    border-right: none;
+  }
+
+  &__input {
+    flex: 1;
+    padding: $spacing-small;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: $color-dark;
+
+    &:disabled {
+      background-color: $color-disabled;
+    }
+  }
+}

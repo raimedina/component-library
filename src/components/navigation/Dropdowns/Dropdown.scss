@@ -1,0 +1,67 @@
+@use "../../../styles/main.scss" as *;
+@use "sass:color";
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+
+  &__toggle {
+    padding: $spacing-small $spacing-medium;
+    background-color: $color-primary;
+    color: $color-light;
+    border: none;
+    border-radius: $border-radius-small;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: color.adjust($color-primary, $lightness: 20%);
+
+    }
+  }
+
+  &__menu {
+    position: absolute;
+    margin-top: $spacing-small;
+    background-color: $color-light;
+    border: 1px solid $color-border;
+    border-radius: $border-radius-small;
+    box-shadow: $box-shadow-heavy;
+    z-index: 1000;
+    list-style: none;
+    padding: 0;
+
+    &--top {
+      bottom: 100%;
+    }
+
+    &--bottom {
+      top: 100%;
+    }
+
+    &--left {
+      right: 100%;
+    }
+
+    &--right {
+      left: 100%;
+    }
+  }
+
+  &__item {
+    padding: $spacing-small $spacing-medium;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: color.adjust($color-light, $lightness: 15%);
+
+      color: $color-dark;
+    }
+
+    &--disabled {
+      color: $color-muted;
+      cursor: not-allowed;
+    }
+  }
+}

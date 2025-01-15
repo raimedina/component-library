@@ -1,0 +1,52 @@
+@use "../../../styles/main.scss" as *;
+
+.popover {
+  position: relative;
+  display: inline-block;
+
+  &__content {
+    position: absolute;
+    min-width: 150px;
+    max-width: 300px;
+    padding: $spacing-small;
+    background-color: $color-light;
+    border: 1px solid $color-border;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow-heavy;
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+
+    &--top {
+      bottom: 100%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-10px);
+    }
+
+    &--right {
+      top: 50%;
+      left: 100%;
+      transform: translateY(-50%) translateX(10px);
+    }
+
+    &--bottom {
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%) translateY(10px);
+    }
+
+    &--left {
+      top: 50%;
+      right: 100%;
+      transform: translateY(-50%) translateX(-10px);
+    }
+
+    &.visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+  }
+}

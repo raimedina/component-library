@@ -1,0 +1,51 @@
+@use "../../../styles/main.scss" as *;
+@use "sass:color";
+
+.list-group {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  border: 1px solid $color-border;
+  border-radius: $border-radius;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+  &--flush {
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  &__item {
+    padding: $spacing-small $spacing-medium;
+    background-color: $color-light;
+    border-bottom: 1px solid $color-border;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+
+    &:hover:not(.list-group__item--disabled) {
+      background-color: color.adjust($color-light, $lightness: 15%);
+      transform: scale(1.02);
+    }
+
+    &--active {
+      background-color: $color-primary;
+      color: $color-muted;
+      font-weight: $font-weight-bold;
+      box-shadow: inset 0 0 0 2px $color-dark;
+    }
+
+    &--disabled {
+      background-color: $color-disabled;
+      color: $color-muted;
+      cursor: not-allowed;
+      opacity: 0.6;
+    }
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
