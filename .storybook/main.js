@@ -2,10 +2,7 @@ const path = require('path');
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 
 module.exports = {
-  // Define onde estão os arquivos de stories
   stories: ['../src/**/*.stories.@(js|jsx|ts|tsx)'],
-
-  // Addons padrão do Storybook
   addons: [
     '@storybook/addon-essentials',
     '@storybook/addon-actions',
@@ -15,14 +12,11 @@ module.exports = {
 
   ],
 
-  // Definição correta do framework
   framework: '@storybook/react-webpack5',
 
-  // Configuração personalizada do Webpack
   webpackFinal: async (config) => {
     config.resolve.extensions.push('.ts', '.tsx');
 
-    // Atalhos de importação
     config.resolve.alias = {
       ...config.resolve.alias,
       '@styles': path.resolve(__dirname, '../src/styles'),
@@ -42,13 +36,12 @@ module.exports = {
         },
       },
     });
-    // Loader para imagens
+  
     config.module.rules.push({
       test: /\.(png|jpe?g|gif|webp)$/i,
       type: 'asset/resource',
     });
 
-    // Loader para SVG
     config.module.rules.push({
       test: /\.svg$/,
       issuer: /\.[jt]sx?$/,
@@ -58,7 +51,6 @@ module.exports = {
       },
     });
 
-    // Loader para SCSS
     config.module.rules.push({
       test: /\.s[ac]ss$/i,
       use: [
@@ -77,7 +69,6 @@ module.exports = {
       ],
     });
 
-    // Loader para TypeScript
     config.module.rules.push({
       test: /\.(ts|tsx)$/,
       exclude: /node_modules/,
@@ -96,7 +87,6 @@ module.exports = {
       },
     });
 
-    // Plugin React Refresh apenas em desenvolvimento
     if (process.env.NODE_ENV === 'development') {
       config.plugins.push(new ReactRefreshWebpackPlugin());
     }

@@ -30,14 +30,8 @@ export const Interactive: Story = {
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
-
-    // Aguarda o botão de menu
     const button = await canvas.findByLabelText("Toggle navigation menu");
-
-    // Clica para abrir o menu
     await userEvent.click(button);
-
-    // Aguarda o item "Services" aparecer no DOM e ser visível
     const menuItem = await waitFor(() => {
       const item = canvas.getByText("Services");
       expect(item).toBeInTheDocument();
@@ -45,7 +39,6 @@ export const Interactive: Story = {
       return item;
     });
 
-    // Clica no item
     await userEvent.click(menuItem);
   },
 };

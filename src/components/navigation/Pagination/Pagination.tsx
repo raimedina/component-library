@@ -20,7 +20,7 @@ export const Pagination: React.FC<PaginationProps> = ({
 
   const handlePageClick = (page: number) => {
     if (page !== activePage && page > 0 && page <= totalPages) {
-      setActivePage(page);  // Atualiza o estado interno
+      setActivePage(page); 
       onPageChange(page);
     }
   };

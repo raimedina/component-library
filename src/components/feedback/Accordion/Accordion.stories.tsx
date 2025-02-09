@@ -18,7 +18,7 @@ const meta: Meta<typeof Accordion> = {
       ],
     },
     onToggle: {
-      action: "Item Toggled",  // ✅ Captura ações automaticamente
+      action: "Item Toggled",  
       description: "Dispara quando o item do Accordion é clicado",
     },
   },
@@ -34,14 +34,12 @@ const defaultItems = [
   { title: "Item 3", content: "Conteúdo 3" },
 ];
 
-// 📌 1. Story Default (Controls + Actions)
 export const Default: Story = {
   args: {
     items: defaultItems,
   },
 };
 
-// 📌 2. Story Interactive (Simulação de Interação)
 export const Interactive: Story = {
   args: {
     items: defaultItems,
@@ -49,11 +47,9 @@ export const Interactive: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
 
-    // ✅ Simula clique no primeiro item
     const firstItem = await canvas.findByText("Item 1");
     await userEvent.click(firstItem);
 
-    // ✅ Verifica se o conteúdo aparece após o clique
     await expect(canvas.getByText("Conteúdo 1")).toBeInTheDocument();
   },
 };

@@ -45,7 +45,7 @@ export const Interactive: Story = {
     const canvas = within(canvasElement);
     const input = await canvas.findByLabelText(args.label);
 
-    const dynamicValue = 'TestUser';  // ✅ Valor dinâmico para simulação
+    const dynamicValue = 'TestUser'; 
 
     await userEvent.clear(input);
     await userEvent.type(input, dynamicValue);

@@ -30,7 +30,7 @@ export const Interactive = Template.bind({});
 Interactive.args = {
   text: 'Interactive Tooltip',
   position: 'top',
-  onShow: action('Tooltip shown'),  // ✅ Action para registrar o hover
+  onShow: action('Tooltip shown'), 
 };
 
 Interactive.play = async ({ canvasElement }) => {

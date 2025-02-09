@@ -49,7 +49,6 @@ export default meta;
 
 type Story = StoryObj<FormControlProps>;
 
-// História padrão
 export const Default: Story = {
   args: {
     label: "Name",
@@ -57,7 +56,6 @@ export const Default: Story = {
   },
 };
 
-// Campo com erro
 export const WithError: Story = {
   args: {
     label: "Email",
@@ -66,7 +64,6 @@ export const WithError: Story = {
   },
 };
 
-// Campo interativo
 export const Interactive: Story = {
   args: {
     label: "Username",
@@ -81,7 +78,6 @@ export const Interactive: Story = {
   },
 };
 
-// Campo desabilitado
 export const Disabled: Story = {
   args: {
     label: "Disabled Field",
@@ -98,7 +94,6 @@ export const Disabled: Story = {
   },
 };
 
-// Campo obrigatório com validação
 export const RequiredField: Story = {
   args: {
     label: "Required Field",

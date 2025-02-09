@@ -13,7 +13,7 @@ const meta: Meta<typeof Modal> = {
     isOpen: { control: "boolean" },
     title: { control: "text" },
     size: { control: "select", options: ["small", "medium", "large"] },
-    onClose: { action: 'closed' },  // ✅ Action configurado
+    onClose: { action: 'closed' }, 
   },
 };
 
@@ -29,8 +29,8 @@ const Template: StoryFn<ModalProps> = (args) => {
         {...args}
         isOpen={isOpen}
         onClose={() => {
-          args.onClose && args.onClose();  // ✅ Registra o Action
-          setTimeout(() => setIsOpen(false), 500);  // ✅ Fechamento com atraso
+          args.onClose && args.onClose(); 
+          setTimeout(() => setIsOpen(false), 500); 
         }}
       >
         <p>This is modal content.</p>
@@ -42,17 +42,15 @@ export const Interactive = Template.bind({});
 Interactive.args = {
   title: "Interactive Modal",
   size: "medium",
-  onClose: action('Modal closed'),  // ✅ Action configurado
+  onClose: action('Modal closed'), 
 };
 
 Interactive.play = async ({ canvasElement }) => {
   const canvas = within(canvasElement);
-  
-  // ✅ Primeiro abre o modal
+
   const openButton = canvas.getByText('Open Modal');
   await userEvent.click(openButton);
 
-  // ✅ Agora busca o botão de fechar
   const closeButton = await canvas.findByLabelText('Close');
   await userEvent.click(closeButton);
 

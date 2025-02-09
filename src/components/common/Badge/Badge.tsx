@@ -9,7 +9,7 @@ interface BadgeProps {
   variant?: BadgeVariant;
   size?: BadgeSize;
   rounded?: boolean;
-  onClick?: () => void;  // ✅ Adicionei o onClick
+  onClick?: () => void;  
 }
 
 const Badge: React.FC<BadgeProps> = ({
@@ -17,7 +17,7 @@ const Badge: React.FC<BadgeProps> = ({
   variant = 'primary',
   size = 'medium',
   rounded = false,
-  onClick,  // ✅ Adicionado ao componente
+  onClick,  
 }) => {
   const classes = [
     'badge',
@@ -27,7 +27,7 @@ const Badge: React.FC<BadgeProps> = ({
   ].join(' ');
 
   return (
-    <span className={classes} onClick={onClick}>  {/* ✅ onClick aplicado */}
+    <span className={classes} onClick={onClick}> 
       {label}
     </span>
   );

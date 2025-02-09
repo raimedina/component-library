@@ -33,7 +33,6 @@ export const Range: React.FC<RangeProps> = ({
     [onChange]
   );
 
-  // Manipula teclas ArrowRight e ArrowLeft
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (disabled) return;
 
@@ -60,7 +59,7 @@ export const Range: React.FC<RangeProps> = ({
         value={currentValue}
         disabled={disabled}
         onChange={handleChange}
-        onKeyDown={handleKeyDown}  // Adicionado o evento de teclado
+        onKeyDown={handleKeyDown} 
         className="range__input"
       />
       <span className="range__value">{currentValue}</span>

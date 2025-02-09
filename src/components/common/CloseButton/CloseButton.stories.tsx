@@ -14,7 +14,7 @@ const meta: Meta<typeof CloseButton> = {
       options: ['small', 'medium', 'large'],
       description: "Size of the close button.",
     },
-    onClick: { action: 'clicked' }, // ✅ Captura o clique
+    onClick: { action: 'clicked' }, 
   },
 };
 
@@ -24,7 +24,7 @@ type Story = StoryObj<typeof CloseButton>;
 
 export const Default: StoryObj<typeof CloseButton> = {
   args: {
-    onClick: action('Close button clicked'), // ✅ Ação ativada no clique
+    onClick: action('Close button clicked'), 
   },
 };
 

@@ -7,7 +7,6 @@ interface ThemeContextProps {
   toggleTheme: () => void;
 }
 
-// ✅ Corrigido para garantir o valor inicial correto
 const ThemeContext = createContext<ThemeContextProps | null>(null);
 
 interface ThemeProviderProps {

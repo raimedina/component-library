@@ -16,7 +16,6 @@ export const Spinner: React.FC<SpinnerProps> = ({
   onStart,
   onStop,
 }) => {
-  // ✅ Correção: useCallback dentro do componente
   const handleStart = useCallback(() => {
     onStart && onStart();
   }, [onStart]);

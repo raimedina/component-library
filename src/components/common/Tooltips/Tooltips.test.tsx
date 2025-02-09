@@ -12,7 +12,6 @@ describe('Tooltip Component', () => {
 
     const button = screen.getByText(/hover me/i);
     
-    // ✅ Simula o hover para exibir o tooltip
     fireEvent.mouseEnter(button);
 
     const tooltipElement = screen.getByText(/tooltip content/i);

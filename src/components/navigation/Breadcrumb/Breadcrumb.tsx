@@ -14,8 +14,8 @@ interface BreadcrumbProps {
 
 const Breadcrumb: React.FC<BreadcrumbProps> = ({ items, onClick }) => {
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, item: BreadcrumbItem, index: number) => {
-    e.preventDefault();  // Previne a navegação
-    onClick?.(item, index);  // Chama o onClick corretamente
+    e.preventDefault(); 
+    onClick?.(item, index);  
   };
 
   return (

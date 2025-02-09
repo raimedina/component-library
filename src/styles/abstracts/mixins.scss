@@ -1,28 +1,24 @@
 @use '../base/colors.scss' as *;
 @use "sass:color";
 
-// Flexbox centralizado
 @mixin flex-center {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-// Transição genérica
 @mixin transition($properties: all, $duration: 0.3s, $timing: ease) {
   transition: $properties $duration $timing;
 }
-// Sombra customizável
+
 @mixin box-shadow($shadow: $box-shadow-default) {
   box-shadow: $shadow;
 }
 
-// Borda customizável
 @mixin border-radius($radius: $border-radius) {
   border-radius: $radius;
 }
 
-// Estilo de variantes de botão
 @mixin button-variant($bg-color, $hover-color: color.adjust($bg-color, $lightness: -10%), $text-color: $color-white) {
   background-color: $bg-color;
   color: $text-color;

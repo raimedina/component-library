@@ -6,7 +6,7 @@ describe('Pagination Component', () => {
   test('renders correct number of pages', () => {
     render(<Pagination totalPages={5} currentPage={1} onPageChange={() => {}} />);
     const buttons = screen.getAllByRole('button');
-    expect(buttons.length).toBe(7); // 5 pages + Previous + Next
+    expect(buttons.length).toBe(7);
   });
 
   test('calls onPageChange when a page is clicked', () => {

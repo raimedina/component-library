@@ -4,6 +4,6 @@ import App from './App';
 
 test('renders navbar with Home link', () => {
   render(<App />);
-  const linkElement = screen.getByText(/Início/i);  // Corrigido para um link real
+  const linkElement = screen.getByText(/Início/i); 
   expect(linkElement).toBeInTheDocument();
 });

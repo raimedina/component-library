@@ -8,7 +8,7 @@ const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 
 root.render(
   <React.StrictMode>
-    <ThemeProvider> {/* ✅ ThemeProvider no index */}
+    <ThemeProvider> 
       <App />
     </ThemeProvider>
   </React.StrictMode>

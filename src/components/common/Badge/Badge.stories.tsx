@@ -19,7 +19,7 @@ const meta: Meta<typeof Badge> = {
       options: ['small', 'medium', 'large'],
     },
     rounded: { control: "boolean" },
-    onClick: { action: "clicked" },  // ✅ Action configurado
+    onClick: { action: "clicked" },  
   },
 };
 
@@ -45,10 +45,8 @@ export const Interactive: Story = {
     const canvas = within(canvasElement);
     const badge = await canvas.findByText("Interactive Badge");
 
-    // ✅ Simulando clique
     await userEvent.click(badge);
 
-    // ✅ Verificando se o clique foi capturado
     expect(badge).toBeInTheDocument();
   },
 };
